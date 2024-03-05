@@ -7,6 +7,7 @@ body {
 	background: rgb(55, 55, 55);
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .canva {
@@ -38,13 +39,13 @@ body {
     box-shadow: 0 0 10px rgb(221, 221, 221);
 }
 #title {
-    height: 50px;
-    width: 400px;
+    height: 5vh;
+    width: 80vw;
 }
 
 #male_data, #female_data {
-    height: 100px;
-    width: 400px;
+    height: 10vh;
+    width: 80vw;
 }
 
 label {
@@ -70,4 +71,9 @@ label {
 #run:hover {
     box-shadow: 0 0 30px rgb(54, 74, 79);
     cursor: pointer;
+}
+
+.notice {
+    color: white;
+    margin: 20px;
 }

@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="author" content="KorecRay">
+    <meta name="version" content="Beta || Release">
+    <title>人口金字塔繪圖器</title>
+</head>
+
+<body>
+    <div class="canva">
+        <canvas id="chart"></canvas>
+    </div>
+    <div class="in">
+        <!-- <input type="text" id="title" placeholder="輸入地名">
+            <input type="text" id="male_data" placeholder="輸入男性資料(注意為21筆，中間請用逗號)">
+            <input type="text" id="male_data" placeholder="輸入女性資料(注意為21筆，中間請用逗號)"> -->
+
+        <!-- <textarea id="title" rows="4" cols="50" placeholder="輸入地名"></textarea>
+            <textarea id="male_data" rows="4" cols="50" placeholder="輸入男性資料(注意為21筆，中間請用逗號)"></textarea>
+            <textarea id="female_data" rows="4" cols="50" placeholder="輸入女性資料(注意為21筆，中間請用逗號)"></textarea> -->
+
+        <label for="title">地名：</label>
+        <textarea id="title" rows="4" cols="50" placeholder="輸入地名"></textarea>
+
+        <label for="male_data">男性資料(21筆，中間請用逗號)：</label>
+        <textarea id="male_data" rows="4" cols="50" placeholder="輸入男性資料(注意為21筆，中間請用逗號)"></textarea>
+
+        <label for="female_data">女性資料(21筆，中間請用逗號)：</label>
+        <textarea id="female_data" rows="4" cols="50" placeholder="輸入女性資料(注意為21筆，中間請用逗號)"></textarea>
+
+        <span id="run" onclick="active()">> 啟動 <</span>
+
+    </div>
+    <script type="text/javascript" src="./app.js"></script>
+</body>
+
+</html>

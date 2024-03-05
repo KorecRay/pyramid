@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: rgb(55, 55, 55);
+    display: flex;
+}
+
+.canva {
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    right: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.in {
+    display: flex;
+    position: fixed;
+    width: 40%;
+    height: 100%;
+    padding-left: 200px;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+.in textarea {
+    resize: none;
+    margin: 20px 0px 20px 0px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgb(221, 221, 221);
+}
+#title {
+    height: 50px;
+    width: 400px;
+}
+
+#male_data, #female_data {
+    height: 100px;
+    width: 400px;
+}
+
+label {
+    color: white;
+}
+
+#run {
+    background-color: rgb(54, 74, 79);
+    color: white;
+    text-shadow: 0 0 5px white;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "Microsoft JhengHei", "Arial";
+    border: none;
+    border-radius: 50px;
+    margin-top: 50px;
+}
+
+#run:hover {
+    box-shadow: 0 0 30px rgb(54, 74, 79);
+    cursor: pointer;
+}

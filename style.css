@@ -50,6 +50,7 @@ body {
 
 label {
     color: white;
+    font-size: 12px;
 }
 
 #run {

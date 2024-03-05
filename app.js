@@ -31,6 +31,8 @@ function active() {
     calcData()
     calcGraph()
     generateGraph()
+    scrollToBottom()
+
 }
 
 
@@ -184,3 +186,34 @@ const generateGraph = () => {
     ctx.fillText(depR, depRPosX, 840);
 
 };
+
+
+
+function scrollToBottom() {
+    const currentPosition = window.scrollY;
+    const targetPosition = document.body.scrollHeight;
+    const distance = targetPosition - currentPosition;
+
+    const duration = 1000;
+    const startTime = performance.now();
+
+    function scrollAnimation(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = elapsedTime / duration;
+
+        if (progress < 1) {
+            const ease = easeOutQuad(progress);
+            window.scrollTo(0, currentPosition + distance * ease);
+            window.requestAnimationFrame(scrollAnimation);
+        } else {
+            window.scrollTo(0, targetPosition);
+        }
+    }
+
+    window.requestAnimationFrame(scrollAnimation);
+}
+
+function easeOutQuad(t) {
+    return t * (2 - t);
+}
+

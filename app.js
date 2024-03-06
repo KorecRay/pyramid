@@ -218,3 +218,11 @@ function easeOutQuad(t) {
     return t * (2 - t);
 }
 
+function save() {
+            var link = document.createElement('a');
+            link.download = 'canvas_image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+

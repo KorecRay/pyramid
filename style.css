@@ -53,7 +53,7 @@ label {
     font-size: 12px;
 }
 
-#run {
+#run ,#save{
     background-color: rgb(54, 74, 79);
     color: white;
     text-shadow: 0 0 5px white;
@@ -73,6 +73,8 @@ label {
     box-shadow: 0 0 30px rgb(54, 74, 79);
     cursor: pointer;
 }
+
+
 
 .notice {
     color: white;

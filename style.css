@@ -53,7 +53,23 @@ label {
     font-size: 12px;
 }
 
-#run ,#save{
+#run {
+    background-color: rgb(54, 74, 79);
+    color: white;
+    text-shadow: 0 0 5px white;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: "Microsoft JhengHei", "Arial";
+    border: none;
+    border-radius: 50px;
+    margin-top: 50px;
+}
+
+#save {
     background-color: rgb(54, 74, 79);
     color: white;
     text-shadow: 0 0 5px white;
@@ -74,6 +90,13 @@ label {
     cursor: pointer;
 }
 
+.down {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* padding: 40px; */
+    margin-bottom: 5vh;
+}
 
 
 .notice {

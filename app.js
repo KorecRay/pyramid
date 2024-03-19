@@ -23,23 +23,35 @@ let data = {
     bigCt: 0
 };
 
-function active() {
-    data = {
-    male: [],
-    female: [],
-    maleCt: 0,
-    femaleCt: 0,
-    allCt: 0,
-    maleRt: [],
-    femaleRt: [],
-    sexRt: null,
-    depRt: null,
-    smaCt: 0,
-    midCt: 0,
-    bigCt: 0
+let maxRt;
+let publicRt;
+let finalRt = {
+    ma: [],
+    fe: []
 };
 
-    
+function active() {
+    data = {
+        male: [],
+        female: [],
+        maleCt: 0,
+        femaleCt: 0,
+        allCt: 0,
+        maleRt: [],
+        femaleRt: [],
+        sexRt: null,
+        depRt: null,
+        smaCt: 0,
+        midCt: 0,
+        bigCt: 0
+    };
+
+    finalRt = {
+        ma: [],
+        fe: []
+    };
+
+
     data.male = document.getElementById("male_data").value.split(',').map(num => parseInt(num.trim(), 10));
     data.female = document.getElementById("female_data").value.split(',').map(num => parseInt(num.trim(), 10));
 
@@ -82,12 +94,7 @@ const calcData = () => {
 
 // calcData();
 
-let maxRt;
-let publicRt;
-let finalRt = {
-    ma: [],
-    fe: []
-};
+
 const calcGraph = () => {
     let max = 0;
     for (let k in data.maleRt) {
@@ -118,14 +125,16 @@ const calcGraph = () => {
 
 // calcGraph();
 
-let cen = 330;
 const generateGraph = () => {
+    let cen = 330;
+
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
     ctx.strokeStyle = "#0eaaed";
     ctx.lineWidth = 29;
+
     let top = 680;
+
     for (let k in finalRt.ma) {
         ctx.beginPath();
         ctx.moveTo(cen, top);
@@ -133,15 +142,19 @@ const generateGraph = () => {
         ctx.stroke();
         top -= 30;
     }
+
     top = 680;
     ctx.strokeStyle = "#f754d7";
+
     for (let k in finalRt.fe) {
         ctx.beginPath();
         ctx.moveTo(cen, top);
         ctx.lineTo(cen + finalRt.fe[k], top);
         ctx.stroke();
         top -= 30;
+        console.log(top)
     }
+
     ctx.lineWidth = 1;
     ctx.strokeStyle = "#fff";
     ctx.beginPath();
@@ -151,22 +164,7 @@ const generateGraph = () => {
     ctx.fillStyle = "#000";
     ctx.font = "20px Arial"
     ctx.strokeStyle = "#000";
-    // for (let k = 0; k <= maxRt; k += 2) {
-    //     ctx.fillText(`${k}%`, k * publicRt + cen - 5, 750);
-    //     ctx.beginPath();
-    //     ctx.moveTo(k * publicRt + cen, 720);
-    //     ctx.lineTo(k * publicRt + cen, 700);
-    //     ctx.stroke();
-    //     console.log(k * publicRt + 305)
-    // }
-    // for (let k = 0; k >= -maxRt; k -= 2) {
-    //     ctx.fillText(`${-k}%`, k * publicRt + cen - 5, 750);
-    //     ctx.beginPath();
-    //     ctx.moveTo(cen + k * publicRt, 720);
-    //     ctx.lineTo(cen + k * publicRt, 700);
-    //     ctx.stroke();
-    //     console.log(k * publicRt + 305)
-    // }
+
     for (let k = -maxRt; k <= maxRt; k += 2) {
         const x = cen + k * publicRt;
         ctx.fillText(`${Math.abs(k)}%`, x - 5, 750);
@@ -235,10 +233,10 @@ function easeOutQuad(t) {
 }
 
 function save() {
-            var link = document.createElement('a');
-            link.download = 'canvas_image.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-        }
+    var link = document.createElement('a');
+    link.download = 'canvas_image.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
 
 

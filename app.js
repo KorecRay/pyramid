@@ -24,6 +24,22 @@ let data = {
 };
 
 function active() {
+    data = {
+    male: [],
+    female: [],
+    maleCt: 0,
+    femaleCt: 0,
+    allCt: 0,
+    maleRt: [],
+    femaleRt: [],
+    sexRt: null,
+    depRt: null,
+    smaCt: 0,
+    midCt: 0,
+    bigCt: 0
+};
+
+    
     data.male = document.getElementById("male_data").value.split(',').map(num => parseInt(num.trim(), 10));
     data.female = document.getElementById("female_data").value.split(',').map(num => parseInt(num.trim(), 10));
 
